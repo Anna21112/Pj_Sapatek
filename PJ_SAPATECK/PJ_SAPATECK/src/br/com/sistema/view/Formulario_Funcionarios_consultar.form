@@ -1128,7 +1128,7 @@
                 <Component class="javax.swing.JButton" name="jButton4">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="3" name="/br/com/sistema/imagens/buscar_1.png"/>
+                      <Image iconType="3" name="/br/com/sistema/imagens/excluir.png"/>
                     </Property>
                   </Properties>
                   <Events>
