@@ -352,69 +352,79 @@ public class Formulario_Fornecedor_cadastro extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField3ActionPerformed
 
     private void jFormattedTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField5ActionPerformed
-        String text = jFormattedTextField5.getText();
-        text.replace(".","").replace("/", "").replace("-", "");
-        int cnpj;
-        cnpj = Integer.parseInt(text);
         
-        fornecedor.setCNPJ(cnpj);
     }//GEN-LAST:event_jFormattedTextField5ActionPerformed
 
     private void jFormattedTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField4ActionPerformed
-        String text = jFormattedTextField4.getText();
-        text.replace(")","").replace("(", "").replace("-", "");
         
-        int telefone = Integer.parseInt(text);
-        fornecedor.setTelefone(telefone);
         
     }//GEN-LAST:event_jFormattedTextField4ActionPerformed
 
     private void jFormattedTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField3ActionPerformed
-        String text = jFormattedTextField3.getText();
-        text.replace(".","").replace("/", "").replace("-", "");
         
-        int cep = Integer.parseInt(text);
-        
-        fornecedor.setCEP(cep);
     }//GEN-LAST:event_jFormattedTextField3ActionPerformed
 
     private void jTextField13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField13ActionPerformed
-        fornecedor.setCidade(jTextField13.getText());
+        
     }//GEN-LAST:event_jTextField13ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        String cnpjText = jFormattedTextField5.getText();
+        cnpjText = cnpjText.replaceAll("[^\\d]", "");
+        long cnpj = Long.parseLong(cnpjText);
+        fornecedor.setCNPJ(cnpj);
+        
+        String telefoneText = jFormattedTextField4.getText();
+        telefoneText = telefoneText.replaceAll("[^\\d]", "");
+        long telefone = Long.parseLong(telefoneText);
+        fornecedor.setTelefone(telefone);
+        
+        String cepText = jFormattedTextField3.getText();
+        cepText = cepText.replaceAll("[^\\d]", "");
+        int cep = Integer.parseInt(cepText);
+        fornecedor.setCEP(cep);
+        
+        int numero = Integer.parseInt(jTextField14.getText());
+        fornecedor.setNumero_residencia(numero);
+        
+        fornecedor.setNome(jTextField1.getText());
+        fornecedor.setCidade(jTextField13.getText());
+        fornecedor.setBairro(jTextField12.getText());
+        fornecedor.setRua(jTextField9.getText());
+        fornecedor.setWEBSITE(jTextField8.getText());
+        fornecedor.setEmail(jTextField6.getText());
+        fornecedor.setNome(jTextField3.getText());
+        fornecedor.setEstado(jTextField2.getText());
         fornecedor.insertFornecedor();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jTextField12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField12ActionPerformed
-        fornecedor.setBairro(jTextField12.getText());
+        
     }//GEN-LAST:event_jTextField12ActionPerformed
 
     private void jTextField9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField9ActionPerformed
-        fornecedor.setRua(jTextField9.getText());
+        
     }//GEN-LAST:event_jTextField9ActionPerformed
 
     private void jTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField8ActionPerformed
-        fornecedor.setWEBSITE(jTextField8.getText());
+        
     }//GEN-LAST:event_jTextField8ActionPerformed
 
     private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
-       fornecedor.setEmail(jTextField6.getText());
+       
     }//GEN-LAST:event_jTextField6ActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
 
-        fornecedor.setNome(jTextField3.getText());
+        
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
-        fornecedor.setEstado(jTextField2.getText());
+        
     }//GEN-LAST:event_jTextField2ActionPerformed
 
     private void jTextField14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField14ActionPerformed
-        int numero = Integer.parseInt(jTextField14.getText());
         
-        fornecedor.setNumero_residencia(numero);
     }//GEN-LAST:event_jTextField14ActionPerformed
 
     /**
