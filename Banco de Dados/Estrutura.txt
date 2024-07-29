@@ -1,0 +1,53 @@
+create schema sapatek;
+use sapatek;
+
+create  table fornecedor (
+	id_fornecedor int not null auto_increment,
+    nome varchar(45) not null,
+    cnpj bigint (14) not null,
+    cep int (8) not null,
+    rua varchar(45),
+    cidade varchar(45),
+    bairro varchar(45),
+    estado varchar(45),
+    telefone int not null,
+    email varchar(45) not null,
+    website varchar(60),
+    numero int,
+    primary key (id_fornecedor)
+);
+
+create table produto (
+	id_produto int not null auto_increment,
+    id_fornecedor int not null,
+    nome varchar(45) not null,
+    categoria varchar(20) not null,
+    qnt int not null,
+    descricao varchar(100),
+    modelo varchar(40) not null,
+    marca varchar(45) not null,
+    estilo varchar(45),
+    tipo varchar(45),
+    primary key (id_produto),
+    constraint fk_produto_fornecedor foreign key (id_fornecedor)
+		references fornecedor (id_fornecedor) on delete cascade on update cascade
+);
+
+create index fk_produto_fornecedor_idx on fornecedor (id_fornecedor);
+
+
+create table funcionario (
+	id_funcionario int not null auto_increment,
+    cpf bigint(11) not null,
+    nome varchar(45) not null,
+    telefone bigint not null,
+    cep int (8) not null,
+    rua varchar(45),
+    bairro varchar(45),
+    estado varchar(45),
+    cidade varchar(45),
+    email varchar(45) not null,
+    sexo varchar(45) not null,
+    numero_residencial int not null,
+    primary key (id_funcionario)
+);
